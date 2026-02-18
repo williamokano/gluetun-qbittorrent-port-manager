@@ -44,7 +44,7 @@ while true; do
   echo "Found port $PORT_FORWARDED"
   
   # Check if the fetched port is valid
-  if [[ -z "$PORT_FORWARDED" || ! "$PORT_FORWARDED" =~ ^[0-9]+$ ]]; then
+  if [[ -z "$PORT_FORWARDED" || ! "$PORT_FORWARDED" =~ ^[0-9]+$ || "$PORT_FORWARDED" -eq 0 ]]; then
     echo "Failed to retrieve a valid port number."
     sleep 10
     continue
